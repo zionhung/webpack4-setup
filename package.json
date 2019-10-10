@@ -1,0 +1,27 @@
+{
+  "name": "webpack4-workflow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZionHJS/webpack4-setup.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZionHJS/webpack4-setup/issues"
+  },
+  "homepage": "https://github.com/ZionHJS/webpack4-setup#readme",
+  "devDependencies": {
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}
