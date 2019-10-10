@@ -1,5 +1,6 @@
 import _ from 'lodash';   //ES6 import 语法
 import './style/index.css';   //loader => css-loader module style-loader
+import './style/a.scss';  //loader sass-loader
 
 function createDomElement() {
   var dom = document.createElement('div');
@@ -12,3 +13,5 @@ function createDomElement() {
 let divDom = createDomElement();
 
 document.body.appendChild(divDom);
+
+

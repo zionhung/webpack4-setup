@@ -8,19 +8,31 @@ module.exports = {
         path: path.resolve(__dirname, './dist')
     },
     module: {
-        noParse: /jquery|lodash/,
-        rules: [
-            {
-                test: /\.(sc|c|sa)ss$/,  //正则
-                use: [{
-                    loader: "style-loader"
-                  }, {
-                    loader: "css-loader"
-                  }, {
-                    loader: "sass-loader"
-                  }]   //从后往前去应用到模块上
-            }
-        ]
+        rules: [{
+            test: /\.(sc|c|sa)ss$/,  //正则
+            use: [{
+                loader: "style-loader"
+            }, {
+                loader: "css-loader",
+                options: {
+                    sourceMap: true
+                }
+            }, {
+                loader: 'postcss-loader',
+                options: {
+                    ident: 'postcss',
+                    sourceMap: true,
+                    plugins: loader => [
+                        require('autoprefixer')() // 添加插件
+                    ]
+                }
+            }, {
+                loader: "sass-loader",
+                options: {
+                    sourceMap: true
+                }
+            }]   //从后往前去应用到模块上
+        }]
     }
 };
 

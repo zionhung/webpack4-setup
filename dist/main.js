@@ -86,14 +86,25 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./src/style/index.css":
-/*!*******************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./src/style/index.css ***!
-  \*******************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./src/style/a.scss":
+/*!**********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--4-1!./node_modules/postcss-loader/src??postcss!./node_modules/sass-loader/dist/cjs.js??ref--4-3!./src/style/a.scss ***!
+  \**********************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \".box{\\n    color:red;\\n}\", \"\"]);\n\n\n//# sourceURL=webpack:///./src/style/index.css?./node_modules/css-loader/dist/cjs.js");
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(true);\n// Module\nexports.push([module.i, \".box {\\n  background-color: #c09;\\n  font-size: 30px;\\n  display: flex; }\\n\", \"\",{\"version\":3,\"sources\":[\"/Users/zionhugh/GoogleDrive_Folder/Code_Practices/老马培训/webpack-demo/src/style/a.scss\"],\"names\":[],\"mappings\":\"AAEA;EACI,sBAHS;EAIT,eAAc;EACd,aAAY,EAAA\",\"file\":\"a.scss\",\"sourcesContent\":[\"$bgColor:#c09;\\n\\n.box{\\n    background-color:$bgColor;\\n    font-size:30px;\\n    display:flex;\\n}\\n\\n\\n\"]}]);\n\n\n//# sourceURL=webpack:///./src/style/a.scss?./node_modules/css-loader/dist/cjs.js??ref--4-1!./node_modules/postcss-loader/src??postcss!./node_modules/sass-loader/dist/cjs.js??ref--4-3");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./src/style/index.css":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--4-1!./node_modules/postcss-loader/src??postcss!./node_modules/sass-loader/dist/cjs.js??ref--4-3!./src/style/index.css ***!
+  \*************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(true);\n// Module\nexports.push([module.i, \".box {\\n  color: red; }\\n\", \"\",{\"version\":3,\"sources\":[\"/Users/zionhugh/GoogleDrive_Folder/Code_Practices/老马培训/webpack-demo/src/style/index.css\"],\"names\":[],\"mappings\":\"AAAA;EACI,UAAS,EAAA\",\"file\":\"index.css\",\"sourcesContent\":[\".box{\\n    color:red;\\n}\"]}]);\n\n\n//# sourceURL=webpack:///./src/style/index.css?./node_modules/css-loader/dist/cjs.js??ref--4-1!./node_modules/postcss-loader/src??postcss!./node_modules/sass-loader/dist/cjs.js??ref--4-3");
 
 /***/ }),
 
@@ -162,7 +173,18 @@ eval("module.exports = function(module) {\n\tif (!module.webpackPolyfill) {\n\t\
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _style_index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style/index.css */ \"./src/style/index.css\");\n/* harmony import */ var _style_index_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_index_css__WEBPACK_IMPORTED_MODULE_1__);\n   //ES6 import 语法\n   //loader => css-loader module style-loader\n\nfunction createDomElement() {\n  var dom = document.createElement('div');\n  dom.innerHTML = lodash__WEBPACK_IMPORTED_MODULE_0___default.a.join(['google', '.com', ' wow'], '');\n  dom.className = 'box';\n//dom.classList.add('box');\n  return dom;\n}\n\nlet divDom = createDomElement();\n\ndocument.body.appendChild(divDom);\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _style_index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style/index.css */ \"./src/style/index.css\");\n/* harmony import */ var _style_index_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_index_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _style_a_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style/a.scss */ \"./src/style/a.scss\");\n/* harmony import */ var _style_a_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_style_a_scss__WEBPACK_IMPORTED_MODULE_2__);\n   //ES6 import 语法\n   //loader => css-loader module style-loader\n  //loader sass-loader\n\nfunction createDomElement() {\n  var dom = document.createElement('div');\n  dom.innerHTML = lodash__WEBPACK_IMPORTED_MODULE_0___default.a.join(['google', '.com', ' wow'], '');\n  dom.className = 'box';  //用于测试css-loader style-loader\n//dom.classList.add('box');\n  return dom;\n}\n\nlet divDom = createDomElement();\n\ndocument.body.appendChild(divDom);\n\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/style/a.scss":
+/*!**************************!*\
+  !*** ./src/style/a.scss ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js??ref--4-1!../../node_modules/postcss-loader/src??postcss!../../node_modules/sass-loader/dist/cjs.js??ref--4-3!./a.scss */ \"./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./src/style/a.scss\");\n\nif (typeof content === 'string') {\n  content = [[module.i, content, '']];\n}\n\nvar options = {}\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\")(content, options);\n\nif (content.locals) {\n  module.exports = content.locals;\n}\n\n\n//# sourceURL=webpack:///./src/style/a.scss?");
 
 /***/ }),
 
@@ -173,7 +195,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var loda
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./index.css */ \"./node_modules/css-loader/dist/cjs.js!./src/style/index.css\");\n\nif (typeof content === 'string') {\n  content = [[module.i, content, '']];\n}\n\nvar options = {}\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\")(content, options);\n\nif (content.locals) {\n  module.exports = content.locals;\n}\n\n\n//# sourceURL=webpack:///./src/style/index.css?");
+eval("var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js??ref--4-1!../../node_modules/postcss-loader/src??postcss!../../node_modules/sass-loader/dist/cjs.js??ref--4-3!./index.css */ \"./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./src/style/index.css\");\n\nif (typeof content === 'string') {\n  content = [[module.i, content, '']];\n}\n\nvar options = {}\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\")(content, options);\n\nif (content.locals) {\n  module.exports = content.locals;\n}\n\n\n//# sourceURL=webpack:///./src/style/index.css?");
 
 /***/ })
 
