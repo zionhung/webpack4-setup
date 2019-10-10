@@ -182,9 +182,9 @@ eval("module.exports = function(module) {\n\tif (!module.webpackPolyfill) {\n\t\
   !*** ./src/assets/img/111.png ***!
   \********************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-eval("module.exports = __webpack_require__.p + \"7580dafa1d54106dca66766b9f73aaf4.png\";\n\n//# sourceURL=webpack:///./src/assets/img/111.png?");
+eval("throw new Error(\"Module build failed (from ./node_modules/image-webpack-loader/index.js):\\nArgumentError: Expected `options.quality` to be of type `array` but received type `string`\\n    at l (/Users/zionhugh/GoogleDrive_Folder/Code_Practices/老马培训/webpack-demo/node_modules/ow/dist/source/index.js:1:8350)\\n    at input (/Users/zionhugh/GoogleDrive_Folder/Code_Practices/老马培训/webpack-demo/node_modules/imagemin-pngquant/index.js:32:3)\\n    at /Users/zionhugh/GoogleDrive_Folder/Code_Practices/老马培训/webpack-demo/node_modules/p-pipe/index.js:12:25\");\n\n//# sourceURL=webpack:///./src/assets/img/111.png?");
 
 /***/ }),
 
