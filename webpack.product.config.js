@@ -13,31 +13,38 @@ module.exports = {
         path: path.resolve(__dirname, './dist')
     },
     module: {
-        rules: [{
-            test: /\.(sc|c|sa)ss$/,  //正则
-            use: [
-                MiniCssExtractPlugin.loader,
-                {
-                    loader: 'css-loader',
-                    options: {
-                        sourceMap: true
-                    }
-                }, {
-                    loader: 'postcss-loader',
-                    options: {
-                        ident: 'postcss',
-                        sourceMap: true,
-                        plugins: loader => [
-                            require('autoprefixer')() // 添加插件
-                        ]
-                    }
-                }, {
-                    loader: "sass-loader",
-                    options: {
-                        sourceMap: true
-                    }
-                }]   //从后往前去应用到模块上
-        }]
+        rules: [
+            {   //处理图片的rule
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
+                    'file-loader'
+                ]
+            },{
+                //处理style的rule
+                test: /\.(sc|c|sa)ss$/,  //正则
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: true
+                        }
+                    }, {
+                        loader: 'postcss-loader',
+                        options: {
+                            ident: 'postcss',
+                            sourceMap: true,
+                            plugins: loader => [
+                                require('autoprefixer')() // 添加插件
+                            ]
+                        }
+                    }, {
+                        loader: "sass-loader",
+                        options: {
+                            sourceMap: true
+                        }
+                    }]   //从后往前去应用到模块上
+            }]
     },
     plugins: [
         new MiniCssExtractPlugin({
