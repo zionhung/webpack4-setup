@@ -14,4 +14,5 @@ let divDom = createDomElement();
 
 document.body.appendChild(divDom);
 
+console.log(123);
 

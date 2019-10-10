@@ -14,7 +14,7 @@ let prodConfig = {
     module: {
         rules: [
             {
-                //处理style的rule
+                //css样式处理rule
                 test: /\.(sc|c|sa)ss$/, 
                 use: [
                     MiniCssExtractPlugin.loader,
@@ -58,6 +58,6 @@ let prodConfig = {
     }
 };
 
-module.exports = merge('common', 'prodConfig');
+module.exports = merge(common, prodConfig);
 
 
