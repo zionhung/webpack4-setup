@@ -2,19 +2,21 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
     mode: 'production',
     output: {
-        filename: 'main.js',
+        filename: 'main.[hash].js',
         path: path.resolve(__dirname, './dist')
     },
     module: {
         rules: [{
             test: /\.(sc|c|sa)ss$/,  //正则
             use: [
-                MiniCssExtractPlugin.loader, {
+                MiniCssExtractPlugin.loader,
+                {
                     loader: 'css-loader',
                     options: {
                         sourceMap: true
@@ -38,8 +40,18 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: '[name].css', // 设置最终输出的文件名 name => filename 这里是main.js => main.css
-            chunkFilename: '[id].css'
+            filename: '[name][hash].css', // 设置最终输出的文件名 name => filename 这里是main.js => main.css
+            chunkFilename: '[id][hash].css'
+        }),
+        new HtmlWebpackPlugin({
+            title: 'GOOGLE PRACTICE', // 默认值：Webpack App
+            filename: 'main.html', // 默认值： 'index.html'
+            template: path.resolve(__dirname, 'src/main.html'),
+            minify: {
+                collapseWhitespace: true,
+                removeComments: true,   //是否移除注释
+                removeAttributeQuotes: true // 是否移除属性的引号
+            }
         })
     ],
     optimization: {
