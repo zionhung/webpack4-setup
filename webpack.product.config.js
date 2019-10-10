@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -26,7 +27,7 @@ module.exports = {
                     options: {
                         ident: 'postcss',
                         sourceMap: true,
-                        plugins: (loader) => [
+                        plugins: loader => [
                             require('autoprefixer')() // 添加插件
                         ]
                     }
@@ -52,7 +53,8 @@ module.exports = {
                 removeComments: true,   //是否移除注释
                 removeAttributeQuotes: true // 是否移除属性的引号
             }
-        })
+        }),
+        new CleanWebpackPlugin(['dist'])   //清理dist目录
     ],
     optimization: {
         minimizer: [
