@@ -6,7 +6,16 @@ module.exports = {
     entry: './src/index.js',   //入口
     module: {
         rules: [
-            {   //处理图片的rule-1
+            {   //JS babel转码
+                test: /\.js$/,
+                exclude: /(node_modules)/,  // 加快编译速度，不包含node_modules文件夹内容
+                use: {
+                    loader: 'babel-loader',
+                    options:{
+                        cacheDirectory:true
+                    }
+                }
+            }, {   //处理图片的rule-1
                 test: /\.(png|svg|jpg|gif|jpeg)$/,
                 include: [path.resolve(__dirname, 'src/')],
                 use: [
@@ -17,7 +26,7 @@ module.exports = {
                         }
                     },
                 ]
-            },{ //处理图片的rule-2
+            }, { //处理图片的rule-2
                 loader: 'image-webpack-loader',
                 options: {
                     mozjpeg: {
