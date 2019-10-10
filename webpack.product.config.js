@@ -36,8 +36,9 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: '[name].css', // 设置最终输出的文件名
+            filename: '[name].css', // 设置最终输出的文件名 name => filename 这里是main.js => main.css
             chunkFilename: '[id].css'
         })
     ]
 };
+
