@@ -4,6 +4,12 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',   //入口
+    resolve: {  //解析resolve.alias配置
+        alias: {
+            extensions:[".js", ".vue", ".json"],
+            '@': path.resolve(__dirname, 'src/')
+        }
+    },
     module: {
         rules: [
             {   //JS eslint 校验然后 babel 转码
