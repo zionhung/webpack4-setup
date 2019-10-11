@@ -6,15 +6,21 @@ module.exports = {
     entry: './src/index.js',   //入口
     module: {
         rules: [
-            {   //JS babel转码
+            {   //JS eslint 校验然后 babel 转码
                 test: /\.js$/,
-                exclude: /(node_modules)/,  // 加快编译速度，不包含node_modules文件夹内容
-                use: {
+                exclude: /(node_modules|bower_components)/,  // 加快编译速度，不包含node_modules文件夹内容
+                use: [{
                     loader: 'babel-loader',
-                    options:{
-                        cacheDirectory:true
+                    options: {
+                        cacheDirectory: true
                     }
-                }
+                }, {
+                    loader: "eslint-loader",
+                    options: {
+                        // eslint options (if necessary)
+                        fix: true
+                    }
+                }]
             }, {   //处理图片的rule-1
                 test: /\.(png|svg|jpg|gif|jpeg)$/,
                 include: [path.resolve(__dirname, 'src/')],
