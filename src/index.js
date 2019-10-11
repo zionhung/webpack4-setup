@@ -50,10 +50,10 @@ console.log('d:', d);
 console.log('e:', e);
 console.log('f:', f);
 
-$(funtion(){
+$(function() {
   console.log('jQuery:', jQuery);
-  
-  $('.box').click(function () {
+
+  $('.box').click(function() {
     alert(1);
   });
 });
