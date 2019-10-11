@@ -11,7 +11,8 @@ module.exports = {
         extensions: [".js", ".vue", ".json"]  //配置模块名字可以省略的后缀名
     },
     externals: {   //外部扩展 设置从输出bundle中排除依赖
-        jquery: 'jQuery'
+        jquery: 'jQuery',
+        lodash:'_'
     },
     module: {
         rules: [
