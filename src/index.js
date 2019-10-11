@@ -2,7 +2,7 @@ import _ from 'lodash'; // ES6 import 语法
 import './style/index.css'; // loader => css-loader module style-loader
 import './style/a.scss'; // loader sass-loader
 import axios from 'axios';
-import { d, e, f } from './b.js';
+import { d, e, f } from '@/b';
 
 function createDomElement() {
   var dom = document.createElement('div');

@@ -5,10 +5,10 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
     entry: './src/index.js',   //入口
     resolve: {  //解析resolve.alias配置
-        alias: {
-            extensions:[".js", ".vue", ".json"],
-            '@': path.resolve(__dirname, 'src/')
-        }
+        alias: {   //配置路径别名 看index.js如何引用b.js就知道了
+            '@': path.resolve(__dirname, 'src/') 
+        },
+        extensions:[".js", ".vue", ".json"]  //配置模块名字可以省略的后缀名
     },
     module: {
         rules: [
