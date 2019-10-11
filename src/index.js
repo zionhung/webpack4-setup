@@ -3,6 +3,7 @@ import './style/index.css'; // loader => css-loader module style-loader
 import './style/a.scss'; // loader sass-loader
 import axios from 'axios';
 import { d, e, f } from '@/b';
+import $ from 'jQuery';
 
 function createDomElement() {
   var dom = document.createElement('div');
@@ -48,3 +49,11 @@ console.log('c:', c);
 console.log('d:', d);
 console.log('e:', e);
 console.log('f:', f);
+
+$(funtion(){
+  console.log('jQuery:', jQuery);
+  
+  $('.box').click(function () {
+    alert(1);
+  });
+});

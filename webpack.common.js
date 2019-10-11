@@ -6,9 +6,12 @@ module.exports = {
     entry: './src/index.js',   //入口
     resolve: {  //解析resolve.alias配置
         alias: {   //配置路径别名 看index.js如何引用b.js就知道了
-            '@': path.resolve(__dirname, 'src/') 
+            '@': path.resolve(__dirname, 'src/')
         },
-        extensions:[".js", ".vue", ".json"]  //配置模块名字可以省略的后缀名
+        extensions: [".js", ".vue", ".json"]  //配置模块名字可以省略的后缀名
+    },
+    externals: {   //外部扩展 设置从输出bundle中排除依赖
+        jquery: 'jQuery'
     },
     module: {
         rules: [
