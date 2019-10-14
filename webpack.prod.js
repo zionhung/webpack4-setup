@@ -2,6 +2,8 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const merge = require('webpack-merge');
 const common = require('./webpack.common');
 
@@ -12,8 +14,7 @@ let prodConfig = {
         path: path.resolve(__dirname, './dist')
     },
     module: {
-        rules: [
-            {
+        rules: [{
                 //css样式处理rule
                 test: /\.(sc|c|sa)ss$/, 
                 use: [
@@ -28,8 +29,8 @@ let prodConfig = {
                         options: {
                             ident: 'postcss',
                             sourceMap: true,
-                            plugins: loader => [
-                                require('autoprefixer')() // 添加插件
+                            plugins: (loader) => [
+                                require('autoprefixer')() // 添加插件 用于兼容浏览器打前缀
                             ]
                         }
                     }, {
@@ -48,16 +49,15 @@ let prodConfig = {
     ],
     optimization: {
         minimizer: [
+            new OptimizeCSSAssetsPlugin({}),
             new UglifyJsPlugin({
                 cache: true,
                 parallel: true,
                 sourceMap: true // set to true if you want JS source maps
-            }),
-            new OptimizeCSSAssetsPlugin({})
+            })
         ]
     }
 };
 
 module.exports = merge(common, prodConfig);
-
 
