@@ -69,7 +69,7 @@ module.exports = {
             filename: 'main.html', // 默认值： 'index.html'
             template: path.resolve(__dirname, 'src/main.html'),
             minify: {
-                collapseWhitespace: true,
+                collapseWhitespace: true,   //是否清除空行
                 removeComments: true,   //是否移除注释
                 removeAttributeQuotes: true // 是否移除属性的引号
             }
