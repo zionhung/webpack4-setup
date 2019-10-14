@@ -22,12 +22,18 @@ module.exports = {
             {   //JS eslint 校验然后 babel 转码
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,  // 加快编译速度，不包含node_modules文件夹内容
-                use: {
+                use: [{
                     loader: 'babel-loader',
                     options: {
                         cacheDirectory: true
                     }
-                }
+                }, {
+                    loader: "eslint-loader",
+                    options: {
+                        // eslint options (if necessary)
+                        fix: true
+                    }
+                }]
             }, {   //处理图片的rule-1
                 test: /\.(png|svg|jpg|gif|jpeg)$/,
                 include: [path.resolve(__dirname, 'src/')],
@@ -77,5 +83,3 @@ module.exports = {
         new CleanWebpackPlugin(['dist'])   //清理dist目录
     ]
 }
-
-
