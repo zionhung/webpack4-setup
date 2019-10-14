@@ -1,4 +1,7 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
@@ -12,25 +15,19 @@ module.exports = {
     },
     externals: {   //外部扩展 设置从输出bundle中排除依赖
         jquery: 'jQuery',
-        lodash:'_'
+        lodash: '_'
     },
     module: {
         rules: [
             {   //JS eslint 校验然后 babel 转码
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,  // 加快编译速度，不包含node_modules文件夹内容
-                use: [{
+                use: {
                     loader: 'babel-loader',
                     options: {
                         cacheDirectory: true
                     }
-                }, {
-                    loader: "eslint-loader",
-                    options: {
-                        // eslint options (if necessary)
-                        fix: true
-                    }
-                }]
+                }
             }, {   //处理图片的rule-1
                 test: /\.(png|svg|jpg|gif|jpeg)$/,
                 include: [path.resolve(__dirname, 'src/')],
@@ -40,30 +37,31 @@ module.exports = {
                         options: {
                             limit: 10000
                         }
-                    },
-                ]
-            }, { //处理图片的rule-2
-                loader: 'image-webpack-loader',
-                options: {
-                    mozjpeg: {
-                        progressive: true,
-                        quality: 65
-                    },
-                    optipng: {
-                        enabled: false,
-                    },
-                    pngquant: {
-                        quality: '65-90',
-                        speed: 4
-                    },
-                    gifsicle: {
-                        interlaced: false,
-                    },
-                    webp: {
-                        quality: 75
+                    }, { //处理图片的rule-2
+                        loader: 'image-webpack-loader',
+                        options: {
+                            mozjpeg: {
+                                progressive: true,
+                                quality: 65
+                            },
+                            optipng: {
+                                enabled: false,
+                            },
+                            pngquant: {
+                                quality: '65-90',
+                                speed: 4
+                            },
+                            gifsicle: {
+                                interlaced: false,
+                            },
+                            webp: {
+                                quality: 75
+                            }
+                        }
                     }
-                }
-            }]
+                ]
+            }
+        ]
     },
     plugins: [
         new HtmlWebpackPlugin({
