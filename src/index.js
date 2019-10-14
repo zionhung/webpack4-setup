@@ -6,10 +6,11 @@ import { d, e, f } from '@/b';
 import $ from 'jQuery';
 
 function createDomElement() {
-  var dom = document.createElement('div');
-  dom.innerHTML = _.join(['google', '.com', ' wow'], '');
-  dom.className = 'box'; // 用于测试css-loader style-loader
-  // dom.classList.add('box');
+  const dom = document.createElement('div');
+  dom.innerHTML = _.join(['aicoder.com', ' 好！', '线下实习'], '');
+  // dom.className = 'box';
+
+  dom.classList.add('box');
   return dom;
 }
 
@@ -51,7 +52,7 @@ console.log('e:', e);
 console.log('f:', f);
 
 $(function() {
-  console.log('jQuery:', jQuery);
+  console.log('jQuery');
 
   $('.box').click(function() {
     alert(1);
