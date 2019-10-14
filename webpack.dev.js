@@ -2,7 +2,7 @@ const path = require('path');
 const merge = require('webpack-merge');
 const common = require('./webpack.common');
 const webpack = require('webpack');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 let devConfig = {
     mode: 'development',
@@ -42,13 +42,11 @@ let devConfig = {
     //#endregion
 
     module: {
-        rules: [
-            {   //css样式处理rule
-                test: /\.(sc|c|sa)ss$/,  //正则
-                use: [{
-                    loader: "style-loader"
-                }, {
-                    loader: "css-loader",
+        rules: [{   //css样式处理rule
+            test: /\.(sc|c|sa)ss$/,  //正则 要处理的文件类型
+            use: [
+                'style-loader', {
+                    loader: 'css-loader',
                     options: {
                         sourceMap: true
                     }
@@ -57,8 +55,8 @@ let devConfig = {
                     options: {
                         ident: 'postcss',
                         sourceMap: true,
-                        plugins: loader => [
-                            require('autoprefixer')() // 添加插件
+                        plugins: (loader) => [
+                            require('autoprefixer')() // 添加插件 autoprefixer()给浏览器打前缀
                         ]
                     }
                 }, {
@@ -67,7 +65,7 @@ let devConfig = {
                         sourceMap: true
                     }
                 }]   //从后往前去应用到模块上
-            }]
+        }]
     },
 
     plugins: [
