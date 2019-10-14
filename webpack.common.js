@@ -66,7 +66,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'GOOGLE PRACTICE', // 默认值：Webpack App
-            filename: 'main.html', // 默认值： 'index.html'
+            filename: 'index.html', // 默认值： 'index.html'
             template: path.resolve(__dirname, 'src/main.html'),
             minify: {
                 collapseWhitespace: true,   //是否清除空行
@@ -76,6 +76,6 @@ module.exports = {
         }),
         new CleanWebpackPlugin(['dist'])   //清理dist目录
     ]
-};
+}
 
 

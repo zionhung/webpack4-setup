@@ -7,7 +7,7 @@ import $ from 'jQuery';
 
 function createDomElement() {
   const dom = document.createElement('div');
-  dom.innerHTML = _.join(['aicoder.com', ' 好！', '线下实习'], '');
+  dom.innerHTML = _.join(['google.com', ' okay', 'coding'], '');
   // dom.className = 'box';
 
   dom.classList.add('box');
@@ -26,7 +26,7 @@ axios.get('/api/compmsglist').then(res => console.log('res:', res));
 // ES6代码
 class Demo {
   show() {
-    console.log('this.Age', this.Age);
+    console.log('this.Age:', this.Age);
   }
 
   get Age() {

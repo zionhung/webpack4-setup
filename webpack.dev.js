@@ -8,7 +8,7 @@ let devConfig = {
     mode: 'development',
     output: {
         filename: 'main.js',
-        path: path.resolve(__dirname, './dist')
+        path: path.resolve(__dirname, 'dist')
     },
     devtool: 'inline-source-map',   //开发阶段显示在js文件中的行号 方便修改
 
